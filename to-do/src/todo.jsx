@@ -22,11 +22,11 @@ function Todo() {
     function handleRemoveTask(id) {
         setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
     }
-
-    function handleDuplicate() {       //add tasks
-        setTasks((prevTasks) => [
-            ...prevTasks,
-            { id: Date.now(), text: '', isChecked: false }
+                                                             //we can also do something like
+    function handleDuplicate() {                             //const[newTask, setNewTask]=usestate("")
+        setTasks((prevTasks) => [                            // function addTask(){
+            ...prevTasks,                                    // setTask(task=>[...task, newTask]);
+            { id: Date.now(), text: '', isChecked: false }   //setNewTask("")
         ]);
     }
 
